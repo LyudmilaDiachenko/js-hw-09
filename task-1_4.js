@@ -10,3 +10,20 @@
 //  { title: 'Book 4', author: 'Author C', category: 'Mystery' },
 //  { title: 'Book 5', author: 'Author B', category: 'Fiction' },
 // ];
+
+
+const books = [
+ { title: 'Book 1', author: 'Author A', category: 'Fiction' },
+ { title: 'Book 2', author: 'Author B', category: 'Non-Fiction' },
+ { title: 'Book 3', author: 'Author A', category: 'Fiction' },
+ { title: 'Book 4', author: 'Author C', category: 'Mystery' },
+ { title: 'Book 5', author: 'Author B', category: 'Fiction' },
+];
+
+let filteredBooks = books.filter(e => e.category === 'Fiction')
+let groupedBooks = {}
+for(let book of filteredBooks){
+    groupedBooks[book.author] = groupedBooks[book.author] || []
+    groupedBooks[book.author].push(book.title)
+}
+console.table(groupedBooks)
